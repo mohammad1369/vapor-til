@@ -20,7 +20,7 @@ RUN apt-get -qq update && apt-get install -y \
   libicu55 libxml2 libbsd0 libcurl3 libatomic1 \
   tzdata \
   && rm -r /var/lib/apt/lists/*
-WORKDIR /app
+
 COPY --from=builder /build/bin/Run .
 COPY --from=builder /build/lib/* /usr/lib/
 # Uncomment the next line if you need to load resources from the `Public` directory
